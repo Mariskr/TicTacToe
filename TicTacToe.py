@@ -5,7 +5,17 @@ mansLogs=Tk()
 mansLogs.title("TicTacToe")
 speletajsX=True #kuram speletejam karta spelet, liks krustinu
 count=0 #aizpildito rutinu skaits
-
+def disableButtons():
+    btn1.config(state=DISABLED)#disable poga nestrada
+    btn2.config(state=DISABLED)#normal poga strada
+    btn3.config(state=DISABLED)
+    btn4.config(state=DISABLED)
+    btn5.config(state=DISABLED)
+    btn6.config(state=DISABLED)
+    btn7.config(state=DISABLED)
+    btn8.config(state=DISABLED)
+    btn9.config(state=DISABLED)
+    return
 def btnClick(button):#pados tukšu pogu
     global speletajsX,count # kādi mainīgie tiks lietoti
     if button["text"]=="" and speletajsX==True: #spele x speletajs
@@ -32,6 +42,7 @@ def parbUzvar():
         btn7["text"]=="X" and btn5["text"]=="X"and btn3["text"]=="X" or
         btn4["text"]=="X" and btn5["text"]=="X"and btn6["text"]=="X"):
         uzvaretajs=True
+        disableButtons()
         messagebox.showinfo("TicTacToe", "Speletajs X ir uzvarētājs")
     elif(btn1["text"]=="O" and btn2["text"]=="O"and btn3["text"]=="O"
         or btn1["text"]=="O" and btn4["text"]=="O"and btn7["text"]=="O"
@@ -42,10 +53,12 @@ def parbUzvar():
         or btn4["text"]=="O" and btn5["text"]=="O"and btn6["text"]=="O"
         or btn7["text"]=="O" and btn5["text"]=="O"and btn3["text"]=="O"):
         uzvaretajs=True
+        disableButtons()
         messagebox.showinfo("TicTacToe", "Speletajs O ir uzvarētājs")
-    elif count==9: 
+    elif count==9:
         
         uzvaretajs=False
+        disableButtons()
         messagebox.showinfo("TicTacToe", "Spēle ir neizšķirta" )
         return    
 
