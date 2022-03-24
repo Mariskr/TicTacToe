@@ -50,19 +50,21 @@ def reset():
 def infoLogs():
     jaunsLogs=Toplevel()
     jaunsLogs.title("Info par spēli")
-    jaunsLogs.geometry("300x300")
-    apraksts=Label(jaunsLogs,text="Spēles informācija")
+    jaunsLogs.geometry("380x300")
+    apraksts=Label(jaunsLogs,text="Spēle tiek spēlēta katru reizi mainoties.\n Sāk spēlētājs, kurš ir X.\n Spēles mērķis ir dabūt trīs vienādus simbolus virknē vai pa diagonāli.")#Spēle tiek spēlēta katru reizi mainoties, sāk spēlētājs, kurš ir X. Spēles mērķis ir dabūt trīs vienādus simbolus pēc kārta vai arī pa diagonāli.
     apraksts.grid(row=0,column=0)
     return 0    
 def btnClick(button):#pados tukšu pogu
     global speletajsX,count # kādi mainīgie tiks lietoti
     if button["text"]=="" and speletajsX==True: #spele x speletajs
         button["text"]="X"#maina uz X
+        button["fg"]="purple"
         speletajsX=False
         count+=1
         parbUzvar()
     elif button["text"]=="" and speletajsX==False:
         button["text"]="O"
+        button["fg"]="black"
         speletajsX=True
         count+=1
         parbUzvar()
@@ -101,15 +103,15 @@ def parbUzvar():
         messagebox.showinfo("TicTacToe", "Spēle ir neizšķirta" )
         return    
 
-btn1=Button(mansLogs, bd=20, fg="black",bg="lightgreen", text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn1))
-btn2=Button(mansLogs, bd=20,fg="black",bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn2))
-btn3=Button(mansLogs, bd=20,fg="black",bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn3))
-btn4=Button(mansLogs, bd=20,fg="black",bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn4))
-btn5=Button(mansLogs, bd=20,fg="black",bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn5))
-btn6=Button(mansLogs, bd=20,fg="black",bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn6))
-btn7=Button(mansLogs, bd=20,fg="black",bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn7))
-btn8=Button(mansLogs, bd=20,fg="black",bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn8))
-btn9=Button(mansLogs, bd=20,fg="black",bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn9))
+btn1=Button(mansLogs, bd=20,bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn1))
+btn2=Button(mansLogs, bd=20,bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn2))
+btn3=Button(mansLogs, bd=20,bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn3))
+btn4=Button(mansLogs, bd=20,bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn4))
+btn5=Button(mansLogs, bd=20,bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn5))
+btn6=Button(mansLogs, bd=20,bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn6))
+btn7=Button(mansLogs, bd=20,bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn7))
+btn8=Button(mansLogs, bd=20,bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn8))
+btn9=Button(mansLogs, bd=20,bg="lightgreen",text="",width=6,height=3,font=("Arial Black",20), command = lambda:btnClick(btn9))
 btn1.grid(row=0,column=0)
 btn2.grid(row=0,column=1)
 btn3.grid(row=0,column=2)
