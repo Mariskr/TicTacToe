@@ -51,7 +51,7 @@ def infoLogs():
     jaunsLogs=Toplevel()
     jaunsLogs.title("Info par spēli")
     jaunsLogs.geometry("380x300")
-    apraksts=Label(jaunsLogs,text="Spēle tiek spēlēta katru reizi mainoties.\n Sāk spēlētājs, kurš ir X.\n Spēles mērķis ir dabūt trīs vienādus simbolus virknē vai pa diagonāli.")#Spēle tiek spēlēta katru reizi mainoties, sāk spēlētājs, kurš ir X. Spēles mērķis ir dabūt trīs vienādus simbolus pēc kārta vai arī pa diagonāli.
+    apraksts=Label(jaunsLogs,text="Spēle tiek spēlēta katru reizi mainoties.\n Sāk spēlētājs, kurš ir X.\n Spēles mērķis ir dabūt trīs vienādus simbolus virknē vai pa diagonāli.")
     apraksts.grid(row=0,column=0)
     return 0    
 def btnClick(button):#pados tukšu pogu
